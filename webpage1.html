@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="libraries/aframe_0_9_2.min.js"></script>
+    <script src="libraries/aframe-event-set-component_5_0_0.min.js"></script>
+    <title>AA3.4 Webpage 1</title>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="sky" src="assets/images/cloudy.png">
+            <img id="ground" src="assets/images/road.jpg">
+            <img id="logo" src="assets/images/logo.png">
+            <a-asset-item id="tv" src="/assets/models/flat_screen/scene.gltf"></a-asset-item>
+            <img id="gameplay" src="assets/images/gameplay_demo.jpg">
+        </a-assets>
+
+        <!--a-camera-->
+		<a-camera position="-2 4 -2" rotation="0 0 0">
+			<a-entity cursor position="0 0 -1"
+					  geometry="primitive: sphere; radius: 0.005"
+					  material="color: #ff0000; shader: flat; opacity: 1">
+			</a-entity>
+		</a-camera>
+
+        <!--a-sky-->
+        <a-sky src="#sky"></a-sky>
+
+        <a-plane src="#ground"
+                    rotation="-90 0 0"
+                    scale="500 500"
+                    repeat="11 11"
+                    normal-map="#ground_texture"
+                    normal-scale="500 500"
+                    normal-texture-repeat="11 11">
+        </a-plane>
+
+        <a-text value="What is Online Gaming?"
+                color="#ffffff"
+                position="-3 8 -10"
+                scale="3 3"
+                align="center"
+                anchor="center">
+        </a-text>
+        <a-text value="Online gaming is any type of game that can be played over the internet or a computer network."
+                color="#ffffff"
+                position="-3 7 -10"
+                scale="2 2"
+                align="center"
+                anchor="center">
+        </a-text>
+
+        <!-- flat screen model -->
+        <a-entity gltf-model="#tv" scale="2.5 2.5 2.5" position="-4 4.5 -10">
+            <a-image src="#gameplay" position="0 0.03 0" width="1.97" height="1.13"></a-image>
+        </a-entity>
+
+        <!--logo inside primitive box shape-->
+        <a-box material="src: #logo; alpha-test: 1" position="0 4 -10" scale="2 2 2">
+        </a-box>
+
+        <!--a-box shape-->
+        <a-box position="-2.75 2 -10"
+                    rotation="0 0 90"
+                    scale="2 8 2"
+                    material="color: #3d3dff"
+                    event-set__enter="_event: mouseenter; material.color: #00ffff"
+			        event-set__leave="_event: mouseleave; material.color: #3d3dff">
+        </a-box>
+
+        <!--a-torus shape-->
+        <a-torus position="3 1.5 -10"
+                    rotation="0 0 90"
+                    radius="1"
+                    radius-tubular="0.2"
+                    segments-tubular="3"
+                    color="#ff4040">
+        </a-torus>
+        
+        <!--a-torus shape-->
+        <a-torus position="-9 1.5 -10"
+                    rotation="0 0 90"
+                    radius="1"
+                    radius-tubular="0.2"
+                    segments-tubular="3"
+                    color="#ff4040">
+        </a-torus>
+    </a-scene>
+</body>
+</html>

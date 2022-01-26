@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="libraries/aframe_0_9_2.min.js"></script>
+    <script src="libraries/aframe-event-set-component_5_0_0.min.js"></script>
+    <title>AA3.4 Webpage 2</title>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="sky" src="assets/images/seamless_sky.jpg">
+            <img id="ground" src="assets/images/concrete.jpg">
+            <img id="wood" src="assets/images/wood_seamless.png">
+            <img id="ground_texture" src="assets/images/concrete_nm.png">
+            <img id="logo" src="assets/images/logo.png">
+            <a-asset-item id="controller" src="/assets/models/controller/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <!--a-camera-->
+		<a-camera position="-2 7 3" rotation="-90 0 0">
+			<a-entity cursor position="0 0 -1"
+					  geometry="primitive: sphere; radius: 0.005"
+					  material="color: #ff0000; shader: flat; opacity: 1">
+			</a-entity>
+		</a-camera>
+
+        <!--a-sky-->
+        <a-sky src="#sky"></a-sky>
+
+        <a-plane src="#ground"
+                    rotation="-90 0 0"
+                    scale="500 500"
+                    repeat="7 7"
+                    normal-map="#ground_texture"
+                    normal-scale="500 500"
+                    normal-texture-repeat="7 7">
+        </a-plane>
+
+        <a-text value="How do Bluetooth Game Controllers Work?"
+                color="#000000"
+                position="-2.75 12 -10"
+                scale="3 3"
+                align="center"
+                anchor="center">
+        </a-text>
+        <a-text value="Bluetooth controllers work very similiarly to wired controllers; instead of transmitting button, joystick, or any other component's command using a cable, this is done through the Bluetooth's 4.0 (or higher) frequency."
+                color="#000000"
+                position="-2.75 9 -10"
+                scale="3 3"
+                align="center"
+                anchor="center">
+        </a-text>
+
+        <!--logo inside primitive box shape-->
+        <a-box id="logoBox" material="src: #logo; alpha-test: 1" position="7.2 1.5 -6.4" scale="3 3 3"
+                animation="property: rotation;
+                to: 0 360 0;
+                repeat: indefinite;
+                dur: 10000;
+                easing: linear;
+                loop: true">
+        </a-box>
+
+        <!-- controller model -->
+        <a-entity gltf-model="#controller"
+                    scale="0.04 0.04 0.04"
+                    position="-4 4.5 -10"
+                    animation="property: scale;
+                        to: 0.03 0.03 0.03;
+                        repeat: indefinite;
+                        dir: alternate;
+                        dur: 2000;
+                        easing: linear;
+                        loop: true">
+            
+        </a-entity>
+
+        <!--a-box shape-->
+        <a-box position="-2.75 1.5 -10"
+                    scale="15 3 5"
+                    material="color: #000000; src: none"
+                    event-set__enter="_event: mouseenter; material.color: #fff; material.src: #wood; material.repeat: 1 1"
+			        event-set__leave="_event: mouseleave; material.color: #000000; material.src: none; material.repeat: 1 1"
+                    event-set__click="_target: #logoBox; animation.enabled: false">
+        </a-box>
+
+        <!--a-sphere shape-->
+        <a-sphere position="3 4.6 -10"
+                    radius="1.5"
+                    color="#ff4040">
+        </a-sphere>
+        
+        <!--a-cone shape-->
+        <a-cone position="-12.5 2 -10"
+                height="4"
+                radius-bottom="2"
+                color="#ff4040">
+        </a-cone>
+
+        <a-light type="spot" color="#7c7cfe" position="-25 13 -10" rotation="-70 -90 -90">
+        </a-light>
+
+        <a-light type="spot" color="#ff9500" position="17 13 -10" rotation="-50 90 -90">
+        </a-light>
+
+        <a-light type="spot" color="#ffffff" position="-3 6 13" rotation="0 0 -90">
+        </a-light>
+
+        <a-text id="movingText" value="Hover over cuboid to reveal texture"
+                color="#ffffff"
+                position="-4.5 1 -7"
+                scale="3 3"
+                align="center"
+                anchor="center"
+                animation="property: color;
+                        to: #ff0000;
+                        repeat: indefinite;
+                        dir: alternate;
+                        dur: 2000;
+                        easing: linear;
+                        loop: true"
+                animation__2="property: position;
+                            to: -1 1 -7;
+                            repeat: indefinite;
+                            dir: alternate;
+                            dur: 2000;
+                            easing: linear;
+                            loop: true">
+        </a-text>
+    </a-scene>
+</body>
+</html>
