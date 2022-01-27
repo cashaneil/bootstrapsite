@@ -1,0 +1,28 @@
+div.first-card {
+    margin-top: 10px;
+}
+
+div.second-card {
+    margin-top: 10px;
+}
+
+div.third-card {
+    margin-top: 10px;
+}
+
+img#firstCardPic {
+    width: 100%;
+}
+
+img#articlePic {
+    width: 100%;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+    width: 100%;
+	padding: 5px;
+	background-color: #262626;
+	color: #ffffff;
+}
