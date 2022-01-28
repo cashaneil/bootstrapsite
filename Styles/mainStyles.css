@@ -1,0 +1,18 @@
+span.badge-success {
+    background-color: orange;
+    color: #262626;
+}
+
+span.badge-warning {
+    background-color: green;
+    color: #FFFFFF;
+}
+
+div.jumbotron {
+    margin-bottom: 0;
+}
+
+span#currentlyIn {
+    font-size: 24px;
+    font-style: italic;
+}

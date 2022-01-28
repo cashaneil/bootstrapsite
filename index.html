@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--BOOTSTRAP LINKS-->
+    <link rel="stylesheet" href="Styles/bootstrap.min.css">
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/popper.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+    <!--AJAX LINK-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <!--STYLING LINKS-->
+    <link rel="stylesheet" href="Styles/progress.css">
+    <link rel="stylesheet" href="Styles/mainStyles.css">
+</head>
+
+<body>
+    <div class="progress"></div>
+    
+    <div class="container-fluid">
+        <header>
+            <!--Header code is injected here-->
+        </header>
+        
+        <div id="page-content">
+            <title>Home | Tech Centre</title>
+            <link rel="stylesheet" href="Styles/index.css">
+            <meta id="desc" name="description" content="Home">
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="card first-card shadow">
+                        <img id="firstCardPic" class="card-img-top" src="/Images/case.jpg" alt="Gallery Preview">
+                        <div class="card-body">
+                            <h4 class="card-title">A Preview from the Gallery</h4>
+                            <p class="card-text">
+                                Check our gallery page for more products
+                            </p>
+                            <a href="/bootstrapsite/gallery.html" class="btn btn-primary">Go to Gallery</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="card second-card no-border p-5">
+                        <div class="card-body">
+                            <h4 class="card-title">About the Website</h4>
+                            <p class="card-text">Tech Centre is mainly about the latest technology and computer
+                                components
+                                available.</p>
+                            <p>We also resell certain featured products which range from computer components to
+                                peripherals
+                                or other equipment of the such. You can find out the pricing for such products through
+                                our
+                                calculation tool on the right side of this page.</p>
+
+                            <h2>Featured Products</h2>
+
+                            <ul>
+                                <li>NVIDIA GeForce RTX 3080 10 GB Founders Edition Video Card</li>
+                                <li>Asus TUF Gaming VG27VQ 27.0" 165 Hz Monitor</li>
+                                <li>NZXT H510 Elite ATX Mid Tower Case</li>
+                                <li>MSI X570 WIFI ATX AM4 Motherboard</li>
+                                <li>SteelSeries ARCTIS 5 (2019 Edition) 7.1 Channel Headset</li>
+                                <li>SteelSeries Rival 3 Wired Optical Mouse</li>
+                            </ul>
+
+                            <img id="articlePic" src="Images/articlePic.jpg">
+                            <h3>An Article by NVIDIA</h3>
+                            <h4>Our Resonse to COVID-19</h4>
+                            <p>As COVID-19 became a health concern, we were very early in deciding to shut all NVIDIA
+                                offices worldwide. We asked employees to work from home and to make their loved ones
+                                their
+                                top priority.
+                                Amid global economic uncertainty, we moved up our yearly performance review by nearly
+                                six
+                                months to put raises into the hands of our employees sooner.
+                                We also extended our people-first commitment to our contractors around the world, who
+                                are
+                                getting paid during this period, regardless of whether they’re able to work.
+                                In a recent survey, 94 percent of employees said they felt well-supported by NVIDIA
+                                during
+                                the crisis.</p>
+
+                            <p>Working from home created new challenges for our teams, so we ensured that employees had
+                                the
+                                technology and tools they needed to remain productive.
+                                Our HR team created a site full of resources for conducting meetings and managing
+                                virtually.
+                                And for those who were struggling with the stress of balancing work, safety, and the
+                                health
+                                of their families, we partnered with our benefits providers for webinars on mental
+                                health,
+                                mindfulness, and resilience.
+                                For employees with children at home, we provided tools on working while taking care of
+                                kids
+                                or facilitating online learning. We also gave NVIDIANs of all ages access to over 200
+                                resources for education, virtual field trips, entertainment ideas, and online
+                                storytimes.
+                            </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card third-card">
+                        <div class="card-body">
+                            <h4 class="card-title">Product Purchase</h4>
+                            <p class="card-text">
+                                <!--dropdown-->
+                            <div class="form-group">
+                                <label for="Select">Select product:</label>
+                                <select id="Select" class="form-control dropdown">
+                                    <option>Selection</option>
+                                    <option>NVIDIA GeForce RTX 3080 10 GB Founders Edition Video Card</option>
+                                    <option>Asus TUF Gaming VG27VQ 27.0 inch 165 Hz Monitor</option>
+                                    <option>NZXT H510 Elite ATX Mid Tower Case</option>
+                                    <option>MSI X570 WIFI ATX AM4 Motherboard</option>
+                                    <option>SteelSeries ARCTIS 5 (2019 Edition) 7.1 Channel Headset</option>
+                                    <option>SteelSeries Rival 3 Wired Optical Mouse</option>
+                                </select>
+                            </div>
+                            <!--1st input textbox-->
+                            <div class="form-group">
+                                <label for="TextInput">Quantity:</label>
+                                <input type="text" id="textbox1" class="form-control" placeholder="Enter quantity...">
+                            </div>
+                            <!--2nd input textbox-->
+                            <div class="form-group">
+                                <label for="TextInput">Tax (in %):</label>
+                                <input type="text" id="textbox2" class="form-control" placeholder="Enter value...">
+                            </div>
+                            <button type="button" onclick="ValidateAndCalculate()" id="calculateBtn"
+                                class="btn btn-info">Calculate</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="JS/home.js"></script>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer>
+        <!--Footer code is injected here-->
+    </footer>
+</body>
+
+<script src="JS/progress.js"></script>
+<script src="JS/loadHandler.js"></script>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--BOOTSTRAP LINKS-->
+    <link rel="stylesheet" href="Styles/bootstrap.min.css">
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/popper.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+    <!--AJAX LINK-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <!--STYLING LINKS-->
+    <link rel="stylesheet" href="Styles/progress.css">
+    <link rel="stylesheet" href="Styles/mainStyles.css">
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <div class="container-fluid">
+        <header>
+            <!--Header code is injected here-->
+        </header>
+
+        <div id="page-content">
+            <title>Contact | Tech Centre</title>
+            <link rel="stylesheet" href="Styles/form.css">
+            <meta id="desc" name="description" content="Contact">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Form</h4>
+                            <p class="card-text">
+                            <form action="mailto:someone@example.com">
+                                <div class="form-group">
+                                    <label for="TextInput">Full Name</label>
+                                    <input type="text" class="form-control" id="textbox1"
+                                        placeholder="Your full name..">
+                                </div>
+                                <div class="form-group">
+                                    <label for="TextInput">Email</label>
+                                    <input type="email" class="form-control" id="textbox2" placeholder="Your email..">
+                                </div>
+                                <div class="form-group">
+                                    <label for="TextInput">Contact Number</label>
+                                    <input type="text" class="form-control" id="textbox3"
+                                        placeholder="Your contact number..">
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment">Comment</label>
+                                    <textarea class="form-control" rows="5" id="comment"
+                                        placeholder="Write your comment here.."></textarea>
+                                </div>
+                                <button type="submit" onclick="return validateForm()" class="btn btn-info">Send</button>
+                            </form>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="JS/contact.js"></script>
+        </div>
+    </div>
+    <footer>
+        <!--Footer code is injected here-->
+    </footer>
+</body>
+
+<script src="JS/progress.js"></script>
+<script src="JS/loadHandler.js"></script>
+
+</html>
