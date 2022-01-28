@@ -8,7 +8,8 @@ document.body.onload = function () {
 $(document).on('click', 'a.nav-link', function (e) {
     //prevent a link from redirecting
     e.preventDefault();
-    let domain = (new URL(window.location.href)).hostname;
+    var domain = (new URL(window.location.href)).hostname;
+    Console.Log(domain);
     //getting new url
     var newPageURL = domain+$(this).attr('href');
     //change current url to new url
