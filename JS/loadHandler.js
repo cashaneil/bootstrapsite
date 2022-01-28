@@ -8,8 +8,9 @@ document.body.onload = function () {
 $(document).on('click', 'a.nav-link', function (e) {
     //prevent a link from redirecting
     e.preventDefault();
+    let domain = (new URL(window.location.href)).hostname;
     //getting new url
-    var newPageURL = $(this).attr('href');
+    var newPageURL = domain+$(this).attr('href');
     //change current url to new url
     history.pushState(null, '', newPageURL);
     //scroll to top
